@@ -6,7 +6,7 @@ on:
         type: choice
         description: "配置文件//Configuration file"
         required: true
-        default: oneplus_15
+        default: oneplus_13_b
         options:
           - oneplus_nord_n30_se_5g_v
           - oneplus_10r_v
