@@ -1,0 +1,39 @@
+name: Build KernelSU NoMount (Cron)
+
+# 定时自动构建：直接调用主 workflow，参数硬编码
+# 独立文件，上游更新 Build Kernel OnePlus NoMount.yml 不会冲突
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: ksu-nomount-cron
+  cancel-in-progress: false
+
+jobs:
+  build:
+    uses: ./.github/workflows/Build Kernel OnePlus NoMount.yml
+    secrets: inherit
+    with:
+      FILE: 'oneplus_13_b'
+      SUSFS_CI: 'N/A'
+      KPM: 'N/A'
+      SUSFS_META: '-1'
+      KSU_META: 'main/main/'
+      SUFFIX: '8-g93e223c276e7-abogki500782043-4k'
+      LZ4_UPDATE: true
+      LSM_BBG: true
+      NETFILTER: true
+      CCM: true
+      UNICODE_BYPASS: true
+      SCHED_HMBIRD: true
+      DROID_SPACES: true
+      RE_KERNEL: false
+      SUSFS_DEV: false
+      SPACE_NOCLEAN: false
+      BUILD_NOCACHE: false
+      NOMOUNT: true
+      FAST_BUILD: true
+      ZRAM: '0/lz4kd/8589934592'
+
