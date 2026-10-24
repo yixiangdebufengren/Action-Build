@@ -22,6 +22,7 @@ jobs:
       SUSFS_META: '-1'
       KSU_META: 'main/main/'
       SUFFIX: '8-g93e223c276e7-abogki500782043-4k'
+      BUILD_TIME: 'Wed Apr  8 15:08:30 UTC 2026'
       LZ4_UPDATE: true
       LSM_BBG: true
       NETFILTER: true
